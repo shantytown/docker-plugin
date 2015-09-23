@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=15.10
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.22.4
+      Content-Type:
+      - text/plain
+      X-Registry-Auth:
+      - e30=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Docker/1.8.2 (linux)
+      Date:
+      - Mon, 05 Oct 2015 14:59:18 GMT
+    body:
+      encoding: UTF-8
+      string: "{\"status\":\"Pulling from library/ubuntu\",\"id\":\"15.10\"}\r\n{\"status\":\"Already
+        exists\",\"progressDetail\":{},\"id\":\"7442c3ed5d19\"}{\"status\":\"Already
+        exists\",\"progressDetail\":{},\"id\":\"3ba895afa4b1\"}{\"status\":\"Already
+        exists\",\"progressDetail\":{},\"id\":\"67d39f70e9bc\"}{\"status\":\"Already
+        exists\",\"progressDetail\":{},\"id\":\"1884caeee373\"}{\"status\":\"Digest:
+        sha256:8f2767be97dc701618fc4f46f73e2273afa6102c4919163e50c47ff6bd6e2c4c\"}\r\n{\"status\":\"Status:
+        Image is up to date for ubuntu:15.10\"}\r\n"
+    http_version: 
+  recorded_at: Mon, 05 Oct 2015 14:59:18 GMT
+- request:
+    method: get
+    uri: http://tcp//localhost:2375/v1.16/images/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.22.4
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Docker/1.8.2 (linux)
+      Date:
+      - Mon, 05 Oct 2015 14:59:18 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        [{"Id":"d22d7942a1d9ddd5467dfe2dfbe1ae2b5bd1dba92bb7d43044b1e73e7adb90f2","ParentId":"dd4e1c34031958f07469ab4fe9b547bc1f85cbca6b135c89a2d3993e9ffb2e35","RepoTags":["docker.intenthq.com/vertica-standalone:0","docker.intenthq.com/vertica-standalone:master"],"RepoDigests":[],"Created":1444051122,"Size":0,"VirtualSize":1077028772,"Labels":{}},{"Id":"7e23f0493733054fdb36792bf97bc6d261a207c0f93abdeaed365c6f83c2f25c","ParentId":"aa42681dea9a89ebad34b8d3712343198529f375ffe6ab11bcfb631b09f25c54","RepoTags":["docker.intenthq.com/vertica:0","docker.intenthq.com/vertica:master"],"RepoDigests":[],"Created":1444050957,"Size":0,"VirtualSize":1064732534,"Labels":{}},{"Id":"80a2443cf65f4d14e6bc7d3fbd2444a2c23bed53e15dac104f4a436ef44f1bd1","ParentId":"633eece52b78ef3a54e063e01e417450795bd3e75dc7fb2c69bdc1bac41e1b13","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444046075,"Size":0,"VirtualSize":1077001487,"Labels":{}},{"Id":"92677082c1659ed2d7c6046546a25d7bfa475548aa84c577baad3107f8792109","ParentId":"6a972ce2bb0fa1ee0bbd4ed4d75e7145e17578a94f4ca561edffa3a9e30e535a","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444045564,"Size":0,"VirtualSize":1064732106,"Labels":{}},{"Id":"5035da91da097f5eedd87a5e6d5049cf8479fd8d815ff17aa595dbc9e2d96989","ParentId":"0c4be70c4af5276cf60598d3aea332a29f07553135303bb4f4c0b3667649ce52","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444045363,"Size":0,"VirtualSize":1064729556,"Labels":{}},{"Id":"15e9bad8ad3841b4bd4667073b23f47d2237b603fb039ea97fc6b0dbab588d0c","ParentId":"cdd4c5a152ed08b21896990dfefe6a81beb9fee0db66e9cd95aba8b14740ba8b","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444045087,"Size":0,"VirtualSize":1028493203,"Labels":{}},{"Id":"c21667b35298d35b517abd7271bcf62708788575bddfcfc50c2fcddcd13d8c9e","ParentId":"09e975b835125620c18a493f1967a0fc918c7da9b9123777663d7b98ae28de33","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444044954,"Size":0,"VirtualSize":1017156177,"Labels":{}},{"Id":"a5a69d53475c4040fd3fa635293c2fafa35233f6319713eeaaa6922041d6f663","ParentId":"7e242645c2d28deeb946927c8a5995fdf029fcbcea5e3fd07d51859ec23bf728","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444044843,"Size":0,"VirtualSize":1017156171,"Labels":{}},{"Id":"43bed208b8c196032f45e0184d8f5497a2e0717f7afb56521229e745a26a80f2","ParentId":"0b9c3be6d437ee43e39980bc7b4e7ae97215596a4440dc453fd257bf3f227f15","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444044747,"Size":0,"VirtualSize":1017156175,"Labels":{}},{"Id":"21071419b89e5f76836500e2bb9db2752f4b179429930d03c27302348549911d","ParentId":"3dc7de0887904e4559dc777e33bc3288203c1c2a5174e3dee0b34c045be75437","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1444044566,"Size":0,"VirtualSize":1017156175,"Labels":{}},{"Id":"855d838e529ea03a142aa63430ebd4d6802995802105148601a45d940e8fa0c1","ParentId":"7e619c60207e9d12176c5044a86ca3f1c2cc9be0552cc330cfd933bac623f8f7","RepoTags":["docker.intenthq.com/base:0"],"RepoDigests":[],"Created":1444043190,"Size":0,"VirtualSize":251940716,"Labels":{}},{"Id":"d668e3cfcbeb9ab7b6e9c9480ccff4195cf4664b63aa05edb19d0a1f22315370","ParentId":"3adf8aecd871237df70021203de19b27d07ea800e5048be243a39a3ec2ee8121","RepoTags":["docker.intenthq.com/base:master"],"RepoDigests":[],"Created":1441800357,"Size":0,"VirtualSize":251894558,"Labels":{}},{"Id":"1884caeee373398982814b86b6588fd0f425c607f459b74c5c3062efc857e601","ParentId":"67d39f70e9bc7eafe3ed808afc81d593799437407ac1a9680082af586a8b86ff","RepoTags":["ubuntu:15.10","one:nic","one:master"],"RepoDigests":[],"Created":1441138317,"Size":0,"VirtualSize":131235464,"Labels":{}},{"Id":"91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c","ParentId":"d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82","RepoTags":["ubuntu:trusty"],"RepoDigests":[],"Created":1440102075,"Size":0,"VirtualSize":188333286,"Labels":{}},{"Id":"26a79041f6307a74dd555808f7272e3d64bcd818ee7275045ec1bbb5aaec2d17","ParentId":"3deb08c41ca710d958ca8d60fb0283c84da50220f743ae55a06d5ef187b39473","RepoTags":["\u003cnone\u003e:\u003cnone\u003e"],"RepoDigests":["\u003cnone\u003e@\u003cnone\u003e"],"Created":1439916351,"Size":0,"VirtualSize":1013941132,"Labels":{}}]
+    http_version: 
+  recorded_at: Mon, 05 Oct 2015 14:59:18 GMT
+recorded_with: VCR 2.9.3

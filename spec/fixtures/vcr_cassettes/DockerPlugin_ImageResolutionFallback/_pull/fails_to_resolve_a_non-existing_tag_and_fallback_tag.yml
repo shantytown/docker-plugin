@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=test_tag
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.22.4
+      Content-Type:
+      - text/plain
+      X-Registry-Auth:
+      - e30=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Docker/1.8.2 (linux)
+      Date:
+      - Mon, 05 Oct 2015 14:59:23 GMT
+    body:
+      encoding: UTF-8
+      string: "{\"status\":\"Pulling repository docker.io/library/ubuntu\"}\r\n{\"errorDetail\":{\"message\":\"Tag
+        test_tag not found in repository docker.io/library/ubuntu\"},\"error\":\"Tag
+        test_tag not found in repository docker.io/library/ubuntu\"}\r\n"
+    http_version: 
+  recorded_at: Mon, 05 Oct 2015 14:59:24 GMT
+- request:
+    method: post
+    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=test_tag
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.22.4
+      Content-Type:
+      - text/plain
+      X-Registry-Auth:
+      - e30=
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Docker/1.8.2 (linux)
+      Date:
+      - Mon, 05 Oct 2015 15:00:55 GMT
+    body:
+      encoding: UTF-8
+      string: "{\"status\":\"Pulling repository docker.io/library/ubuntu\"}\r\n{\"errorDetail\":{\"message\":\"Tag
+        test_tag not found in repository docker.io/library/ubuntu\"},\"error\":\"Tag
+        test_tag not found in repository docker.io/library/ubuntu\"}\r\n"
+    http_version: 
+  recorded_at: Mon, 05 Oct 2015 15:00:56 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=sdfdsfsf&tag
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.22.4
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json
+      Server:
+      - Docker/1.8.2 (linux)
+      Date:
+      - Tue, 22 Sep 2015 16:01:03 GMT
+    body:
+      encoding: UTF-8
+      string: "{\"status\":\"Pulling repository docker.io/library/sdfdsfsf\"}\r\n{\"errorDetail\":{\"message\":\"Error:
+        image library/sdfdsfsf: not found\"},\"error\":\"Error: image library/sdfdsfsf:
+        not found\"}\r\n"
+    http_version: 
+  recorded_at: Tue, 22 Sep 2015 16:01:04 GMT
+recorded_with: VCR 2.9.3
