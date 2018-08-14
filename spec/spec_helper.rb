@@ -8,8 +8,8 @@ require 'vcr'
 require 'webmock'
 require 'docker'
 
-require_relative 'support/contexts/plugin'
-require_relative 'support/contexts/workspace'
+require_relative 'support/contexts/with_plugin'
+require_relative 'support/contexts/with_tmp_shanty'
 require_relative 'support/matchers/call_me_ruby'
 require_relative 'support/matchers/plugin'
 
@@ -17,8 +17,6 @@ SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter '/spec/'
 end
-
-Docker.url = 'tcp://localhost:2375'
 
 RSpec.configure do |config|
   config.expect_with(:rspec) do |c|
@@ -33,7 +31,7 @@ end
 RSpec.shared_context('basics') do
   let(:name) { 'test_name' }
   let(:registry) { 'test_reg' }
-  let(:tag) { 'test_tag' }
+  let(:tag) { 'latest' }
 end
 
 RSpec.shared_context('tmp_dir') do

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: post
-    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=test_tag
+    uri: http://unix/v1.16/images/create?fromImage=ubuntu&tag=latest
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.22.4
+      - Swipely/Docker-API 1.34.2
       Content-Type:
       - text/plain
       X-Registry-Auth:
@@ -16,50 +16,254 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
+      Api-Version:
+      - '1.38'
       Content-Type:
       - application/json
-      Server:
-      - Docker/1.8.2 (linux)
       Date:
-      - Mon, 05 Oct 2015 14:59:23 GMT
+      - Tue, 14 Aug 2018 13:06:11 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
     body:
-      encoding: UTF-8
-      string: "{\"status\":\"Pulling repository docker.io/library/ubuntu\"}\r\n{\"errorDetail\":{\"message\":\"Tag
-        test_tag not found in repository docker.io/library/ubuntu\"},\"error\":\"Tag
-        test_tag not found in repository docker.io/library/ubuntu\"}\r\n"
+      encoding: ASCII-8BIT
+      string: "{\"status\":\"Pulling from library/ubuntu\",\"id\":\"latest\"}\r\n{\"status\":\"Digest:
+        sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7\"}\r\n{\"status\":\"Status:
+        Image is up to date for ubuntu:latest\"}\r\n"
     http_version: 
-  recorded_at: Mon, 05 Oct 2015 14:59:24 GMT
+  recorded_at: Tue, 14 Aug 2018 13:06:12 GMT
+- request:
+    method: get
+    uri: http://unix/v1.16/images/ubuntu:latest/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.34.2
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Api-Version:
+      - '1.38'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Aug 2018 13:06:12 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+    body:
+      encoding: ASCII-8BIT
+      string: '{"Id":"sha256:735f80812f90aca43213934fd321a75ef20b2e30948dbbdd2c240e8abaab8a28","RepoTags":["ubuntu:latest"],"RepoDigests":["ubuntu@sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7"],"Parent":"","Comment":"","Created":"2018-07-26T22:20:48.665464073Z","Container":"4d19de2052265543127727f3f56fc478980a38b5791112718dfc55cb1af2ec42","ContainerConfig":{"Hostname":"4d19de205226","Domainname":"","User":"","AttachStdin":false,"AttachStdout":false,"AttachStderr":false,"Tty":false,"OpenStdin":false,"StdinOnce":false,"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/sh","-c","#(nop)
+        ","CMD [\"/bin/bash\"]"],"ArgsEscaped":true,"Image":"sha256:b717b93655975c82d8ece4bc49b81cfd082435b3b2324ea7a5dbf207811818a9","Volumes":null,"WorkingDir":"","Entrypoint":null,"OnBuild":null,"Labels":{}},"DockerVersion":"17.06.2-ce","Author":"","Config":{"Hostname":"","Domainname":"","User":"","AttachStdin":false,"AttachStdout":false,"AttachStderr":false,"Tty":false,"OpenStdin":false,"StdinOnce":false,"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/bash"],"ArgsEscaped":true,"Image":"sha256:b717b93655975c82d8ece4bc49b81cfd082435b3b2324ea7a5dbf207811818a9","Volumes":null,"WorkingDir":"","Entrypoint":null,"OnBuild":null,"Labels":null},"Architecture":"amd64","Os":"linux","Size":83486393,"VirtualSize":83486393,"GraphDriver":{"Data":{"LowerDir":"/var/lib/docker/overlay2/8d5c08a14bb79fa09974fa00f557d94e31cbfca3108980e16a2e3939aabc3f2a/diff:/var/lib/docker/overlay2/5cc99f54e5503921ed4c1520d7c1f3410d91334aa9a22e7e84ea7941ed095164/diff:/var/lib/docker/overlay2/62c4b26f46a97ca36c30facccbbe097980a229bf838a134e637798c653ea33bc/diff:/var/lib/docker/overlay2/ef5baf86264addf57b3606c1f622a07350e0a9250ab5ba39937078b1b917c68b/diff","MergedDir":"/var/lib/docker/overlay2/1f09c1cd85ef80825601b1518a91da69e9be0634c8191b103c78ecbd2b08dcc8/merged","UpperDir":"/var/lib/docker/overlay2/1f09c1cd85ef80825601b1518a91da69e9be0634c8191b103c78ecbd2b08dcc8/diff","WorkDir":"/var/lib/docker/overlay2/1f09c1cd85ef80825601b1518a91da69e9be0634c8191b103c78ecbd2b08dcc8/work"},"Name":"overlay2"},"RootFS":{"Type":"layers","Layers":["sha256:f49017d4d5ce9c0f544c82ed5cbc0672fbcb593be77f954891b22b4d0d4c0a84","sha256:8f2b771487e9d63540804b8fba7d310204ae26719d3a03a37089925a26a736cd","sha256:ccd4d61916aaa2159429c5d8c81357de29711da04ab7ee5224055361609df1a1","sha256:c01d74f99de40e097c737be5aa00e888fe368bfbbf1f8d4f86831c71b9305f8b","sha256:268a067217b5fe78e000ce16cafd38eae8aa503d887cb918c3ecd3e65a8c54b3"]},"Metadata":{"LastTagTime":"0001-01-01T00:00:00Z"}}
+
+'
+    http_version: 
+  recorded_at: Tue, 14 Aug 2018 13:06:12 GMT
+- request:
+    method: get
+    uri: http://unix/v1.16/images/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.34.2
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Api-Version:
+      - '1.38'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 14 Aug 2018 13:06:12 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"Containers":-1,"Created":1534173788,"Id":"sha256:1787a51a3997167c9f15ddcddcfb147999501759d792971e59ea40e8ac157461","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:3969bc1e5b79d1609d0a47560dc768a57c45d3fe","docker.intenthq.com/config-editor:3c9c2586170e1395016ca8c8fec2e53207f2ce1b","config-editor:3969bc1e5b79d1609d0a47560dc768a57c45d3fe","config-editor:3c9c2586170e1395016ca8c8fec2e53207f2ce1b","config-editor:latest"],"SharedSize":-1,"Size":311125487,"VirtualSize":311125487},{"Containers":-1,"Created":1534173364,"Id":"sha256:96246b560483ee484ed2a85333503aab7d95ae51e55bcb69c42bac12326e935e","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124492,"VirtualSize":311124492},{"Containers":-1,"Created":1534173270,"Id":"sha256:a8d647d20ba161eaf0a6a80663d342aa7a3f3646d7e7c9fece7d8f4c84441ebf","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:5b2ef725ff84fdb2e398b049f5a5a0e9632d3ba0","config-editor:5b2ef725ff84fdb2e398b049f5a5a0e9632d3ba0"],"SharedSize":-1,"Size":311124495,"VirtualSize":311124495},{"Containers":-1,"Created":1534170848,"Id":"sha256:8b612abc933976c60087b4d326a7456fd5d1b71d973a33d84c76a7de7eb7eb90","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124014,"VirtualSize":311124014},{"Containers":-1,"Created":1534170605,"Id":"sha256:da8eab04df581f502cd964cc3ba815b410c02592254ad09e9e55c21db8dfda00","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124015,"VirtualSize":311124015},{"Containers":-1,"Created":1534170517,"Id":"sha256:187276980e3f04c0ba456dd20b49b3fb4614457546db1545cff82ec1a59d6361","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123989,"VirtualSize":311123989},{"Containers":-1,"Created":1534170439,"Id":"sha256:aeb5064e74654ca1fd9796d796748b2722608a20d4688391c2fd776993232567","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123988,"VirtualSize":311123988},{"Containers":-1,"Created":1534169932,"Id":"sha256:0627eecf6384894f1323fd1207efe51ad68f06695ea875065c949d8f08b28c7e","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124541,"VirtualSize":311124541},{"Containers":-1,"Created":1534161533,"Id":"sha256:c54726246a29e3b6e484b31b8e09fd99f76be063aae09bda54a9df7c1d2e601c","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124928,"VirtualSize":311124928},{"Containers":-1,"Created":1534160346,"Id":"sha256:0436f045d314bc08abae2a395175344c07dfb7e78f24ba78fe25218beee47e61","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123744,"VirtualSize":311123744},{"Containers":-1,"Created":1534160087,"Id":"sha256:e165e91c6d201b817eb79be61577311506ea1eb86cc1e2cc1fd4f8cd949021fe","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123742,"VirtualSize":311123742},{"Containers":-1,"Created":1534158539,"Id":"sha256:56bd963239463788a273194bc5728cfe4ec76b15980fb957fffed06d05267d8f","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123288,"VirtualSize":311123288},{"Containers":-1,"Created":1534155308,"Id":"sha256:0f0d9841a14616e6b93bbfc5ee3a42b07dab0646da7542e711c50db5f3b01ccd","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311117600,"VirtualSize":311117600},{"Containers":-1,"Created":1533910518,"Id":"sha256:83355e6614954015b22422ffffdcb6cd15a460b831218f969a896babdceb817c","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:00600f850020aedd5690578d413ade6fd46f7dba","config-editor:00600f850020aedd5690578d413ade6fd46f7dba"],"SharedSize":-1,"Size":311117601,"VirtualSize":311117601},{"Containers":-1,"Created":1533901279,"Id":"sha256:2dbdd472bf80bda8c11e1b6810679de2941fa8012b24539469b09b2a343ae04b","Labels":null,"ParentId":"sha256:4e2593c95bb2663065e23dac272dacd5d99e3312a41d1d6815ca13e4840f8f4d","RepoDigests":null,"RepoTags":["s3-json-processor:latest"],"SharedSize":-1,"Size":174663120,"VirtualSize":174663120},{"Containers":-1,"Created":1533826568,"Id":"sha256:c296791d1ac282e43b4102eb4ce2306cb68910df58ad53381d5da8c428af58ce","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:5ceedec3cdf37e9a26d64e7ef8bd6e8dd9f9b6a7","config-editor:5ceedec3cdf37e9a26d64e7ef8bd6e8dd9f9b6a7"],"SharedSize":-1,"Size":311114985,"VirtualSize":311114985},{"Containers":-1,"Created":1533566333,"Id":"sha256:5fa65f3c4baddaf39e5d18de5832f25ccc2b8fcc9824818c578f521c0107724d","Labels":null,"ParentId":"sha256:5f3786552f9127e2a28e6443d7cd4100234a2f8f905e38eb4f6833714c36a317","RepoDigests":null,"RepoTags":["docker.intenthq.com/json-processor:53dfc90e3e7efcab5f1b79dffbe909677a7cb555","json-processor:53dfc90e3e7efcab5f1b79dffbe909677a7cb555","json-processor:latest"],"SharedSize":-1,"Size":130072508,"VirtualSize":130072508},{"Containers":-1,"Created":1533253329,"Id":"sha256:64037954aed2d1f24311d80d052cd08166e28181884b2a74afe4f3753b4fc5fb","Labels":null,"ParentId":"","RepoDigests":["python@sha256:bbb87624d2989186ebefc18d045fc47597ff67d697595e3f96d4a991faf2b563"],"RepoTags":["python:3.4-alpine"],"SharedSize":-1,"Size":67071444,"VirtualSize":67071444},{"Containers":-1,"Created":1533252136,"Id":"sha256:2e193287b426e53ce73f26997e244162e0de12b1d3e22e278a31628dfd151790","Labels":{"maintainer":"Minio
+        Inc <dev@minio.io>"},"ParentId":"","RepoDigests":["minio/minio@sha256:102f582ec338b531dde41a37bf110a73ecdca1241551f4c8d9304fabd9d937c8"],"RepoTags":["minio/minio:latest"],"SharedSize":-1,"Size":33389731,"VirtualSize":33389731},{"Containers":-1,"Created":1532643648,"Id":"sha256:735f80812f90aca43213934fd321a75ef20b2e30948dbbdd2c240e8abaab8a28","Labels":null,"ParentId":"","RepoDigests":["ubuntu@sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7"],"RepoTags":["ubuntu:latest"],"SharedSize":-1,"Size":83486393,"VirtualSize":83486393},{"Containers":-1,"Created":1531788806,"Id":"sha256:971bb384a50ae93856362f9c40ea471e66a97cfd4023b9cc9b8e4196e99da2c7","Labels":null,"ParentId":"","RepoDigests":["ubuntu@sha256:71529e96591eb36a4100cd0cc5353ff1a2f4ee7a85011e3d3dd07cb5eb524a3e"],"RepoTags":["ubuntu:trusty"],"SharedSize":-1,"Size":188037110,"VirtualSize":188037110},{"Containers":-1,"Created":1531269330,"Id":"sha256:ccfb0c83b2fedce997bb6e73e3f8d68a23bc15b0bc0b534c24ab2fe2239a80b5","Labels":null,"ParentId":"","RepoDigests":["openjdk@sha256:1bed44170948277881d88481ecbd07317eb7bae385560a9dd597bbfe02782766"],"RepoTags":["openjdk:8-jre-alpine"],"SharedSize":-1,"Size":82993515,"VirtualSize":82993515},{"Containers":-1,"Created":1531258784,"Id":"sha256:11569c00178041f0502a3251a2d33196c9a153c564814bc9f712c704a85200c2","Labels":{"org.label-schema.description":"A
+        modern reverse-proxy","org.label-schema.docker.schema-version":"1.0","org.label-schema.name":"Traefik","org.label-schema.url":"https://traefik.io","org.label-schema.vendor":"Containous","org.label-schema.version":"v1.6.5"},"ParentId":"","RepoDigests":["traefik@sha256:eabb39016917bd43e738fb8bada87be076d4553b5617037922b187c0a656f4a4"],"RepoTags":["traefik:latest"],"SharedSize":-1,"Size":52496718,"VirtualSize":52496718},{"Containers":-1,"Created":1530886466,"Id":"sha256:9d1f27787d395110df6fb5aa6ac2abac147e1313daa3c5d827b9edb3c29b9af6","Labels":null,"ParentId":"","RepoDigests":["alpine@sha256:8d9872bf7dc946db1b3cd2bf70752f59085ec3c5035ca1d820d30f1d1267d65d"],"RepoTags":["alpine:edge"],"SharedSize":-1,"Size":4413371,"VirtualSize":4413371},{"Containers":-1,"Created":1530886446,"Id":"sha256:11cd0b38bc3ceb958ffb2f9bd70be3fb317ce7d255c8a4c3f4af30e298aa1aab","Labels":null,"ParentId":"","RepoDigests":["alpine@sha256:7043076348bf5040220df6ad703798fd8593a0918d06d3ce30c6c93be117e430"],"RepoTags":["alpine:latest"],"SharedSize":-1,"Size":4413370,"VirtualSize":4413370},{"Containers":-1,"Created":1469200753,"Id":"sha256:9b9cb95443b5f846cd3c8cfa3f64e63b6ba68de2618a08875a119c81a8f96698","Labels":{},"ParentId":"","RepoDigests":["ubuntu@sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3"],"RepoTags":["ubuntu:15.10","ubuntu:test_tag"],"SharedSize":-1,"Size":137205221,"VirtualSize":137205221}]
+
+'
+    http_version: 
+  recorded_at: Tue, 14 Aug 2018 13:06:12 GMT
 - request:
     method: post
-    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=test_tag
+    uri: http://unix/v1.16/images/create?fromImage=ubuntu&tag=nonono
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.22.4
+      - Swipely/Docker-API 1.34.2
       Content-Type:
       - text/plain
       X-Registry-Auth:
       - e30=
   response:
     status:
-      code: 200
-      message: ''
+      code: 404
+      message: Not Found
     headers:
+      Api-Version:
+      - '1.38'
+      Content-Length:
+      - '37'
       Content-Type:
-      - application/json
-      Server:
-      - Docker/1.8.2 (linux)
+      - text/plain; charset=utf-8
       Date:
-      - Mon, 05 Oct 2015 15:00:55 GMT
+      - Tue, 14 Aug 2018 14:49:39 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+      X-Content-Type-Options:
+      - nosniff
     body:
-      encoding: UTF-8
-      string: "{\"status\":\"Pulling repository docker.io/library/ubuntu\"}\r\n{\"errorDetail\":{\"message\":\"Tag
-        test_tag not found in repository docker.io/library/ubuntu\"},\"error\":\"Tag
-        test_tag not found in repository docker.io/library/ubuntu\"}\r\n"
+      encoding: ASCII-8BIT
+      string: 'manifest for ubuntu:nonono not found
+
+'
     http_version: 
-  recorded_at: Mon, 05 Oct 2015 15:00:56 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 14 Aug 2018 14:49:39 GMT
+- request:
+    method: post
+    uri: http://unix/v1.16/images/sha256:735f80812f90aca43213934fd321a75ef20b2e30948dbbdd2c240e8abaab8a28/tag?force=true&repo=ubuntu&tag=nonono
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.34.2
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Api-Version:
+      - '1.38'
+      Content-Length:
+      - '0'
+      Date:
+      - Tue, 14 Aug 2018 14:49:39 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    http_version: 
+  recorded_at: Tue, 14 Aug 2018 14:49:39 GMT
+- request:
+    method: post
+    uri: http://unix/v1.16/images/create?fromImage=ubuntu&tag=no
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.34.2
+      Content-Type:
+      - text/plain
+      X-Registry-Auth:
+      - e30=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Api-Version:
+      - '1.38'
+      Content-Length:
+      - '33'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Tue, 14 Aug 2018 14:49:55 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: 'manifest for ubuntu:no not found
+
+'
+    http_version: 
+  recorded_at: Tue, 14 Aug 2018 14:49:55 GMT
+- request:
+    method: post
+    uri: http://unix/v1.16/images/create?fromImage=ubuntu&tag=extrano
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Swipely/Docker-API 1.34.2
+      Content-Type:
+      - text/plain
+      X-Registry-Auth:
+      - e30=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Api-Version:
+      - '1.38'
+      Content-Length:
+      - '38'
+      Content-Type:
+      - text/plain; charset=utf-8
+      Date:
+      - Tue, 14 Aug 2018 14:49:57 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: 'manifest for ubuntu:extrano not found
+
+'
+    http_version: 
+  recorded_at: Tue, 14 Aug 2018 14:49:57 GMT
+recorded_with: VCR 4.0.0

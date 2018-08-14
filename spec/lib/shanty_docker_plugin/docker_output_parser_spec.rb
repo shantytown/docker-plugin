@@ -11,7 +11,7 @@ RSpec.describe(DockerPlugin::DockerOutputParser) do
   describe('#parse_chunk') do
     it('can parse a simple string as a chunk') do
       expect(logger).to receive(:warn).with(
-        'Could not parse output from docker: 757: unexpected token at \'nic cage is the best\''
+        'Could not parse output from docker: 765: unexpected token at \'nic cage is the best\''
       )
       expect(logger).to receive(:warn).with('nic cage is the best')
       described_class.parse_chunk('nic cage is the best')

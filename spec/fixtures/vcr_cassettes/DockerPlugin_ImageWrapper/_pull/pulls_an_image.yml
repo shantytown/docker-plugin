@@ -2,91 +2,112 @@
 http_interactions:
 - request:
     method: post
-    uri: http://tcp//localhost:2375/v1.16/images/create?fromImage=ubuntu&tag=15.10
+    uri: http://unix/v1.16/images/create?fromImage=ubuntu&tag=15.10
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.22.4
+      - Swipely/Docker-API 1.34.2
       Content-Type:
       - text/plain
+      X-Registry-Auth:
+      - e30=
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
+      Api-Version:
+      - '1.38'
       Content-Type:
       - application/json
-      Server:
-      - Docker/1.8.2 (linux)
       Date:
-      - Tue, 22 Sep 2015 13:01:00 GMT
+      - Tue, 14 Aug 2018 13:06:13 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
     body:
-      encoding: UTF-8
-      string: "{\"status\":\"Pulling from library/ubuntu\",\"id\":\"15.10\"}\r\n{\"status\":\"Already
-        exists\",\"progressDetail\":{},\"id\":\"7442c3ed5d19\"}{\"status\":\"Already
-        exists\",\"progressDetail\":{},\"id\":\"3ba895afa4b1\"}{\"status\":\"Already
-        exists\",\"progressDetail\":{},\"id\":\"67d39f70e9bc\"}{\"status\":\"Already
-        exists\",\"progressDetail\":{},\"id\":\"1884caeee373\"}{\"status\":\"Digest:
-        sha256:d8fadf467d6188bae22350efff59f40f6873fb36944f9ef3ebb0c36b2be06642\"}\r\n{\"status\":\"Status:
+      encoding: ASCII-8BIT
+      string: "{\"status\":\"Pulling from library/ubuntu\",\"id\":\"15.10\"}\r\n{\"status\":\"Digest:
+        sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3\"}\r\n{\"status\":\"Status:
         Image is up to date for ubuntu:15.10\"}\r\n"
     http_version: 
-  recorded_at: Tue, 22 Sep 2015 13:01:00 GMT
+  recorded_at: Tue, 14 Aug 2018 13:06:13 GMT
 - request:
     method: get
-    uri: http://tcp//localhost:2375/v1.16/images/json
+    uri: http://unix/v1.16/images/ubuntu:15.10/json
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.22.4
+      - Swipely/Docker-API 1.34.2
       Content-Type:
       - text/plain
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
+      Api-Version:
+      - '1.38'
       Content-Type:
       - application/json
-      Server:
-      - Docker/1.8.2 (linux)
       Date:
-      - Tue, 22 Sep 2015 13:05:36 GMT
+      - Tue, 14 Aug 2018 13:06:13 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
     body:
-      encoding: UTF-8
-      string: |
-        [{"Id":"1884caeee373398982814b86b6588fd0f425c607f459b74c5c3062efc857e601","ParentId":"67d39f70e9bc7eafe3ed808afc81d593799437407ac1a9680082af586a8b86ff","RepoTags":["ubuntu:15.10"],"RepoDigests":[],"Created":1441138317,"Size":0,"VirtualSize":131235464,"Labels":{}},{"Id":"013f3d01d24738964bb7101fa83a926181d600ebecca7206dced59669e6e6778","ParentId":"2bd276ed39d5fcfd3d00ce0a190beeea508332f5aec3c6a125cc619a3fdbade6","RepoTags":["ubuntu:15.04"],"RepoDigests":[],"Created":1440102129,"Size":0,"VirtualSize":131330045,"Labels":{}},{"Id":"91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c","ParentId":"d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82","RepoTags":["ubuntu:14.04.3","ubuntu:trusty-20150814","ubuntu:14.04","ubuntu:trusty","ubuntu:latest"],"RepoDigests":[],"Created":1440102075,"Size":0,"VirtualSize":188333286,"Labels":{}},{"Id":"57bca5139a13b1ae0245a1a06c8ebd85ba277f9d0c869c5444c8a6a17343d9b5","ParentId":"edd7c1974a701858ccf9dc7fbd988f860051be9ad5b40a5ac6b67d23bf1bf3c5","RepoTags":["ubuntu:12.04.5","ubuntu:12.04","ubuntu:precise-20150813","ubuntu:precise"],"RepoDigests":[],"Created":1440102031,"Size":0,"VirtualSize":134768159,"Labels":{}},{"Id":"8251da35e7a79dca688682f6da6148a06d358c6f094020844468a782842c2172","ParentId":"e5855facec0b251bacf22cb50b4f1b4229024eec726061474867b59a3186c8de","RepoTags":["ubuntu:trusty-20150806"],"RepoDigests":[],"Created":1438985770,"Size":0,"VirtualSize":188332590,"Labels":{}},{"Id":"63e3c10217b8ff32018e44ddd9e92dc317dc7fff204e149fac1efb6620490e7a","ParentId":"389028aa9e9142b7dc8096f005e747984261bd41c346c6e14ed2deea2309dd29","RepoTags":["ubuntu:14.04.2","ubuntu:trusty-20150730"],"RepoDigests":[],"Created":1438704594,"Size":0,"VirtualSize":188336279,"Labels":{}},{"Id":"d0e008c6cf02df286fde40602539c7d00eabb2618c3122df12886ac75d30c1f0","ParentId":"3c8e79a3b1eb06957aa06f32188eacaecc0804dadffe63e2b064d7d48a1f7800","RepoTags":["ubuntu:precise-20150729"],"RepoDigests":[],"Created":1438704552,"Size":0,"VirtualSize":134734248,"Labels":{}},{"Id":"dce38fb5798668eb49dd4b7054078016746589e1501b46e061f0229b642ab903","ParentId":"74364530838d470c24003ee1bcc185c66a7fe68ea9d9951a477cc4aa5503f5d3","RepoTags":["ubuntu:14.10"],"RepoDigests":[],"Created":1436470155,"Size":0,"VirtualSize":194444569,"Labels":{}},{"Id":"d2a0ecffe6fa4ef3de9646a75cc629bbd9da7eead7f767cb810f9808d6b3ecb6","ParentId":"29460ac934423a55802fcad24856827050697b4a9f33550bd93c82762fb6db8f","RepoTags":["ubuntu:trusty-20150630"],"RepoDigests":[],"Created":1436470114,"Size":0,"VirtualSize":188331689,"Labels":{}},{"Id":"6d021018145f4073c710fa1ed8ddeee1f7c90ea67a1c364d49106e44f133c2fc","ParentId":"50e9f95f98f126604ad84ff598531d258955c45044768204d19ccc399c6d5109","RepoTags":["ubuntu:precise-20150626"],"RepoDigests":[],"Created":1436470080,"Size":0,"VirtualSize":133977217,"Labels":{}},{"Id":"6d4946999d4fb403f40e151ecbd13cb866da125431eb1df0cdfd4dc72674e3c6","ParentId":"9fd3c8c9af32dddb1793ccb5f6535e12d735eacae16f8f8c4214f42f33fe3d29","RepoTags":["ubuntu:trusty-20150612"],"RepoDigests":[],"Created":1434123150,"Size":0,"VirtualSize":188284994,"Labels":{}},{"Id":"78cef618c77e86749226ad7855e5e884a7bdbd85fa1c9361b8653931b4adaec5","ParentId":"82ed8e3123184254375ddb51f7a4d2017a713f2d08457b166472c820c94a142e","RepoTags":["ubuntu:precise-20150612"],"RepoDigests":[],"Created":1434123111,"Size":0,"VirtualSize":133683621,"Labels":{}},{"Id":"fa81ed084842076d1b39b56d084d99ec0011cd4a5ade1056be359486a8b213e4","ParentId":"e04c66a223c45a6247237510c40117cef92acb0a4355f1ba90580ef6274b490d","RepoTags":["ubuntu:trusty-20150528"],"RepoDigests":[],"Created":1433116832,"Size":0,"VirtualSize":188281989,"Labels":{}},{"Id":"5c97af892079335aad555a1e4f3f0d9b84bc73ec47fcddf34afe80b8a03535df","ParentId":"9e450f1461d88e8235be69ee2bd4a8903e453a5ea180cd2690a45eb30c3376b5","RepoTags":["ubuntu:precise-20150528"],"RepoDigests":[],"Created":1433116795,"Size":0,"VirtualSize":133394045,"Labels":{}},{"Id":"d191563ad36befdc3322d2753b2302180f6e4f8e0408b8a7d27e7ec5e658f412","ParentId":"8d07608668f6d6265fc0d4b04b1875db733f4d72bf139b79b564aaf10376d72b","RepoTags":["ubuntu:utopic-20150427"],"RepoDigests":[],"Created":1430430648,"Size":0,"VirtualSize":194434295,"Labels":{}},{"Id":"07f8e8c5e66084bef8f848877857537ffe1c47edd01a93af27e7161672ad0e95","ParentId":"37bea4ee0c816e3a3fa025f36127ef8ef0817b3f8fcd7b49eb7b26064f647bb0","RepoTags":["ubuntu:trusty-20150427"],"RepoDigests":[],"Created":1430430613,"Size":0,"VirtualSize":188278440,"Labels":{}},{"Id":"ac6b0eaa3203c07cb413842c9da6cbbbcf352504c43697ecba449395886e3ae1","ParentId":"9f91f850df242dd39721baec13b48330f26d20a1b50218c6c210c4e4715ebd2c","RepoTags":["ubuntu:precise-20150427"],"RepoDigests":[],"Created":1430430584,"Size":0,"VirtualSize":132442593,"Labels":{}},{"Id":"0b79d1c2df161bd9cbcabf400711a168551dedf680207e0a123b52a1826b62cc","ParentId":"2bab28e86ad1cf8badd7fb7ea072f87a51f52f3812ea37942c9a7b93c956e756","RepoTags":["ubuntu:utopic-20150418"],"RepoDigests":[],"Created":1429654758,"Size":0,"VirtualSize":194435885,"Labels":{}},{"Id":"b7cf8f0d9e82c9d96bd7afd22c600bfdb86b8d66c50d29164e5ad2fb02f7187b","ParentId":"2c014f14d3d95811df672ddae2af376f9557f6b8f5623e3e3f8c5ca3f6ff42e6","RepoTags":["ubuntu:trusty-20150320"],"RepoDigests":[],"Created":1429654729,"Size":0,"VirtualSize":188274656,"Labels":{}},{"Id":"9610cfc68e8d5b1cf9cfc2ff12158850cac00a25628184e8a2ac3a851869125e","ParentId":"8615058f3e1fe972c5d42993ea777906893a6ac55131c14ff22091d3696b2bcc","RepoTags":["ubuntu:precise-20150320"],"RepoDigests":[],"Created":1429654705,"Size":0,"VirtualSize":131864338,"Labels":{}},{"Id":"59a878f244f6236150422f8a1df375f7342122d4559440063e599b9f728890a1","ParentId":"1dc2bd013af7f9c67b57e120fef34981fc7888b170342b1b24d7b60a11d48a44","RepoTags":["ubuntu:utopic-20150319"],"RepoDigests":[],"Created":1426828373,"Size":0,"VirtualSize":194396626,"Labels":null}]
+      encoding: ASCII-8BIT
+      string: '{"Id":"sha256:9b9cb95443b5f846cd3c8cfa3f64e63b6ba68de2618a08875a119c81a8f96698","RepoTags":["ubuntu:15.10","ubuntu:test_tag"],"RepoDigests":["ubuntu@sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3"],"Parent":"","Comment":"","Created":"2016-07-22T15:19:13.510288415Z","Container":"9b5da12722b13c386447977fffcd067a0658f44e4b0838626b2e7b2da531801c","ContainerConfig":{"Hostname":"ca9015dc6bb1","Domainname":"","User":"","AttachStdin":false,"AttachStdout":false,"AttachStderr":false,"Tty":false,"OpenStdin":false,"StdinOnce":false,"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/sh","-c","#(nop)
+        CMD [\"/bin/bash\"]"],"ArgsEscaped":true,"Image":"sha256:8677cced8174b061771aa11eb3874d7eaaf26efceec04dac02c9d1a788fd3064","Volumes":null,"WorkingDir":"","Entrypoint":null,"OnBuild":null,"Labels":{}},"DockerVersion":"1.10.3","Author":"","Config":{"Hostname":"ca9015dc6bb1","Domainname":"","User":"","AttachStdin":false,"AttachStdout":false,"AttachStderr":false,"Tty":false,"OpenStdin":false,"StdinOnce":false,"Env":["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"],"Cmd":["/bin/bash"],"ArgsEscaped":true,"Image":"sha256:8677cced8174b061771aa11eb3874d7eaaf26efceec04dac02c9d1a788fd3064","Volumes":null,"WorkingDir":"","Entrypoint":null,"OnBuild":null,"Labels":{}},"Architecture":"amd64","Os":"linux","Size":137205221,"VirtualSize":137205221,"GraphDriver":{"Data":{"LowerDir":"/var/lib/docker/overlay2/73f5109c16c2435c3f409557da79f79430b595316da0732f5e6d44edda11ef10/diff:/var/lib/docker/overlay2/e3cb963719f2b89bacc1c07d89fdb1ce359e0cb54385b998761c450f039003c7/diff:/var/lib/docker/overlay2/44466cf98d63639cb12288a2fa96323876b759773ad48a03db1cde61f6087e84/diff","MergedDir":"/var/lib/docker/overlay2/8b9bb40c3d1615bf7a0acbbb0e3fb21dd1e0fbd8e63a465cbb91af7d44077bda/merged","UpperDir":"/var/lib/docker/overlay2/8b9bb40c3d1615bf7a0acbbb0e3fb21dd1e0fbd8e63a465cbb91af7d44077bda/diff","WorkDir":"/var/lib/docker/overlay2/8b9bb40c3d1615bf7a0acbbb0e3fb21dd1e0fbd8e63a465cbb91af7d44077bda/work"},"Name":"overlay2"},"RootFS":{"Type":"layers","Layers":["sha256:f121afdbbd5dd49d4a88c402b1a1a4dca39c9ae75ed7f80a29ffd9739fc680a7","sha256:4b955941a4d0bfa4d3eed9ab5cf8e03479ece47a3f0c154439e93230b08a8048","sha256:af288f00b8a7386eadb431dddd75e0f75f129994e89cfa424a00cfc9c8a89c95","sha256:98d59071f692a7a8b02acfea340f4e63b8801d8914812df05334e4b264de2fdb"]},"Metadata":{"LastTagTime":"2018-08-14T13:04:21.6507692Z"}}
+
+'
     http_version: 
-  recorded_at: Tue, 22 Sep 2015 13:05:36 GMT
+  recorded_at: Tue, 14 Aug 2018 13:06:13 GMT
 - request:
     method: get
-    uri: http://tcp//localhost:2375/v1.16/images/json
+    uri: http://unix/v1.16/images/json
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Swipely/Docker-API 1.22.4
+      - Swipely/Docker-API 1.34.2
       Content-Type:
       - text/plain
   response:
     status:
       code: 200
-      message: ''
+      message: OK
     headers:
+      Api-Version:
+      - '1.38'
       Content-Type:
       - application/json
-      Server:
-      - Docker/1.8.2 (linux)
       Date:
-      - Tue, 22 Sep 2015 13:05:36 GMT
+      - Tue, 14 Aug 2018 13:06:13 GMT
+      Docker-Experimental:
+      - 'false'
+      Ostype:
+      - linux
+      Server:
+      - Docker/18.06.0-ce (linux)
     body:
-      encoding: UTF-8
-      string: |
-        [{"Id":"1884caeee373398982814b86b6588fd0f425c607f459b74c5c3062efc857e601","ParentId":"67d39f70e9bc7eafe3ed808afc81d593799437407ac1a9680082af586a8b86ff","RepoTags":["ubuntu:15.10"],"RepoDigests":[],"Created":1441138317,"Size":0,"VirtualSize":131235464,"Labels":{}},{"Id":"013f3d01d24738964bb7101fa83a926181d600ebecca7206dced59669e6e6778","ParentId":"2bd276ed39d5fcfd3d00ce0a190beeea508332f5aec3c6a125cc619a3fdbade6","RepoTags":["ubuntu:15.04"],"RepoDigests":[],"Created":1440102129,"Size":0,"VirtualSize":131330045,"Labels":{}},{"Id":"91e54dfb11794fad694460162bf0cb0a4fa710cfa3f60979c177d920813e267c","ParentId":"d74508fb6632491cea586a1fd7d748dfc5274cd6fdfedee309ecdcbc2bf5cb82","RepoTags":["ubuntu:14.04","ubuntu:trusty","ubuntu:trusty-20150814","ubuntu:latest","ubuntu:14.04.3"],"RepoDigests":[],"Created":1440102075,"Size":0,"VirtualSize":188333286,"Labels":{}},{"Id":"57bca5139a13b1ae0245a1a06c8ebd85ba277f9d0c869c5444c8a6a17343d9b5","ParentId":"edd7c1974a701858ccf9dc7fbd988f860051be9ad5b40a5ac6b67d23bf1bf3c5","RepoTags":["ubuntu:precise","ubuntu:12.04.5","ubuntu:12.04","ubuntu:precise-20150813"],"RepoDigests":[],"Created":1440102031,"Size":0,"VirtualSize":134768159,"Labels":{}},{"Id":"8251da35e7a79dca688682f6da6148a06d358c6f094020844468a782842c2172","ParentId":"e5855facec0b251bacf22cb50b4f1b4229024eec726061474867b59a3186c8de","RepoTags":["ubuntu:trusty-20150806"],"RepoDigests":[],"Created":1438985770,"Size":0,"VirtualSize":188332590,"Labels":{}},{"Id":"63e3c10217b8ff32018e44ddd9e92dc317dc7fff204e149fac1efb6620490e7a","ParentId":"389028aa9e9142b7dc8096f005e747984261bd41c346c6e14ed2deea2309dd29","RepoTags":["ubuntu:14.04.2","ubuntu:trusty-20150730"],"RepoDigests":[],"Created":1438704594,"Size":0,"VirtualSize":188336279,"Labels":{}},{"Id":"d0e008c6cf02df286fde40602539c7d00eabb2618c3122df12886ac75d30c1f0","ParentId":"3c8e79a3b1eb06957aa06f32188eacaecc0804dadffe63e2b064d7d48a1f7800","RepoTags":["ubuntu:precise-20150729"],"RepoDigests":[],"Created":1438704552,"Size":0,"VirtualSize":134734248,"Labels":{}},{"Id":"dce38fb5798668eb49dd4b7054078016746589e1501b46e061f0229b642ab903","ParentId":"74364530838d470c24003ee1bcc185c66a7fe68ea9d9951a477cc4aa5503f5d3","RepoTags":["ubuntu:14.10"],"RepoDigests":[],"Created":1436470155,"Size":0,"VirtualSize":194444569,"Labels":{}},{"Id":"d2a0ecffe6fa4ef3de9646a75cc629bbd9da7eead7f767cb810f9808d6b3ecb6","ParentId":"29460ac934423a55802fcad24856827050697b4a9f33550bd93c82762fb6db8f","RepoTags":["ubuntu:trusty-20150630"],"RepoDigests":[],"Created":1436470114,"Size":0,"VirtualSize":188331689,"Labels":{}},{"Id":"6d021018145f4073c710fa1ed8ddeee1f7c90ea67a1c364d49106e44f133c2fc","ParentId":"50e9f95f98f126604ad84ff598531d258955c45044768204d19ccc399c6d5109","RepoTags":["ubuntu:precise-20150626"],"RepoDigests":[],"Created":1436470080,"Size":0,"VirtualSize":133977217,"Labels":{}},{"Id":"6d4946999d4fb403f40e151ecbd13cb866da125431eb1df0cdfd4dc72674e3c6","ParentId":"9fd3c8c9af32dddb1793ccb5f6535e12d735eacae16f8f8c4214f42f33fe3d29","RepoTags":["ubuntu:trusty-20150612"],"RepoDigests":[],"Created":1434123150,"Size":0,"VirtualSize":188284994,"Labels":{}},{"Id":"78cef618c77e86749226ad7855e5e884a7bdbd85fa1c9361b8653931b4adaec5","ParentId":"82ed8e3123184254375ddb51f7a4d2017a713f2d08457b166472c820c94a142e","RepoTags":["ubuntu:precise-20150612"],"RepoDigests":[],"Created":1434123111,"Size":0,"VirtualSize":133683621,"Labels":{}},{"Id":"fa81ed084842076d1b39b56d084d99ec0011cd4a5ade1056be359486a8b213e4","ParentId":"e04c66a223c45a6247237510c40117cef92acb0a4355f1ba90580ef6274b490d","RepoTags":["ubuntu:trusty-20150528"],"RepoDigests":[],"Created":1433116832,"Size":0,"VirtualSize":188281989,"Labels":{}},{"Id":"5c97af892079335aad555a1e4f3f0d9b84bc73ec47fcddf34afe80b8a03535df","ParentId":"9e450f1461d88e8235be69ee2bd4a8903e453a5ea180cd2690a45eb30c3376b5","RepoTags":["ubuntu:precise-20150528"],"RepoDigests":[],"Created":1433116795,"Size":0,"VirtualSize":133394045,"Labels":{}},{"Id":"d191563ad36befdc3322d2753b2302180f6e4f8e0408b8a7d27e7ec5e658f412","ParentId":"8d07608668f6d6265fc0d4b04b1875db733f4d72bf139b79b564aaf10376d72b","RepoTags":["ubuntu:utopic-20150427"],"RepoDigests":[],"Created":1430430648,"Size":0,"VirtualSize":194434295,"Labels":{}},{"Id":"07f8e8c5e66084bef8f848877857537ffe1c47edd01a93af27e7161672ad0e95","ParentId":"37bea4ee0c816e3a3fa025f36127ef8ef0817b3f8fcd7b49eb7b26064f647bb0","RepoTags":["ubuntu:trusty-20150427"],"RepoDigests":[],"Created":1430430613,"Size":0,"VirtualSize":188278440,"Labels":{}},{"Id":"ac6b0eaa3203c07cb413842c9da6cbbbcf352504c43697ecba449395886e3ae1","ParentId":"9f91f850df242dd39721baec13b48330f26d20a1b50218c6c210c4e4715ebd2c","RepoTags":["ubuntu:precise-20150427"],"RepoDigests":[],"Created":1430430584,"Size":0,"VirtualSize":132442593,"Labels":{}},{"Id":"0b79d1c2df161bd9cbcabf400711a168551dedf680207e0a123b52a1826b62cc","ParentId":"2bab28e86ad1cf8badd7fb7ea072f87a51f52f3812ea37942c9a7b93c956e756","RepoTags":["ubuntu:utopic-20150418"],"RepoDigests":[],"Created":1429654758,"Size":0,"VirtualSize":194435885,"Labels":{}},{"Id":"b7cf8f0d9e82c9d96bd7afd22c600bfdb86b8d66c50d29164e5ad2fb02f7187b","ParentId":"2c014f14d3d95811df672ddae2af376f9557f6b8f5623e3e3f8c5ca3f6ff42e6","RepoTags":["ubuntu:trusty-20150320"],"RepoDigests":[],"Created":1429654729,"Size":0,"VirtualSize":188274656,"Labels":{}},{"Id":"9610cfc68e8d5b1cf9cfc2ff12158850cac00a25628184e8a2ac3a851869125e","ParentId":"8615058f3e1fe972c5d42993ea777906893a6ac55131c14ff22091d3696b2bcc","RepoTags":["ubuntu:precise-20150320"],"RepoDigests":[],"Created":1429654705,"Size":0,"VirtualSize":131864338,"Labels":{}},{"Id":"59a878f244f6236150422f8a1df375f7342122d4559440063e599b9f728890a1","ParentId":"1dc2bd013af7f9c67b57e120fef34981fc7888b170342b1b24d7b60a11d48a44","RepoTags":["ubuntu:utopic-20150319"],"RepoDigests":[],"Created":1426828373,"Size":0,"VirtualSize":194396626,"Labels":null}]
+      encoding: ASCII-8BIT
+      string: '[{"Containers":-1,"Created":1534173788,"Id":"sha256:1787a51a3997167c9f15ddcddcfb147999501759d792971e59ea40e8ac157461","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:3969bc1e5b79d1609d0a47560dc768a57c45d3fe","docker.intenthq.com/config-editor:3c9c2586170e1395016ca8c8fec2e53207f2ce1b","config-editor:3969bc1e5b79d1609d0a47560dc768a57c45d3fe","config-editor:3c9c2586170e1395016ca8c8fec2e53207f2ce1b","config-editor:latest"],"SharedSize":-1,"Size":311125487,"VirtualSize":311125487},{"Containers":-1,"Created":1534173364,"Id":"sha256:96246b560483ee484ed2a85333503aab7d95ae51e55bcb69c42bac12326e935e","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124492,"VirtualSize":311124492},{"Containers":-1,"Created":1534173270,"Id":"sha256:a8d647d20ba161eaf0a6a80663d342aa7a3f3646d7e7c9fece7d8f4c84441ebf","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:5b2ef725ff84fdb2e398b049f5a5a0e9632d3ba0","config-editor:5b2ef725ff84fdb2e398b049f5a5a0e9632d3ba0"],"SharedSize":-1,"Size":311124495,"VirtualSize":311124495},{"Containers":-1,"Created":1534170848,"Id":"sha256:8b612abc933976c60087b4d326a7456fd5d1b71d973a33d84c76a7de7eb7eb90","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124014,"VirtualSize":311124014},{"Containers":-1,"Created":1534170605,"Id":"sha256:da8eab04df581f502cd964cc3ba815b410c02592254ad09e9e55c21db8dfda00","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124015,"VirtualSize":311124015},{"Containers":-1,"Created":1534170517,"Id":"sha256:187276980e3f04c0ba456dd20b49b3fb4614457546db1545cff82ec1a59d6361","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123989,"VirtualSize":311123989},{"Containers":-1,"Created":1534170439,"Id":"sha256:aeb5064e74654ca1fd9796d796748b2722608a20d4688391c2fd776993232567","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123988,"VirtualSize":311123988},{"Containers":-1,"Created":1534169932,"Id":"sha256:0627eecf6384894f1323fd1207efe51ad68f06695ea875065c949d8f08b28c7e","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124541,"VirtualSize":311124541},{"Containers":-1,"Created":1534161533,"Id":"sha256:c54726246a29e3b6e484b31b8e09fd99f76be063aae09bda54a9df7c1d2e601c","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311124928,"VirtualSize":311124928},{"Containers":-1,"Created":1534160346,"Id":"sha256:0436f045d314bc08abae2a395175344c07dfb7e78f24ba78fe25218beee47e61","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123744,"VirtualSize":311123744},{"Containers":-1,"Created":1534160087,"Id":"sha256:e165e91c6d201b817eb79be61577311506ea1eb86cc1e2cc1fd4f8cd949021fe","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123742,"VirtualSize":311123742},{"Containers":-1,"Created":1534158539,"Id":"sha256:56bd963239463788a273194bc5728cfe4ec76b15980fb957fffed06d05267d8f","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311123288,"VirtualSize":311123288},{"Containers":-1,"Created":1534155308,"Id":"sha256:0f0d9841a14616e6b93bbfc5ee3a42b07dab0646da7542e711c50db5f3b01ccd","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":["<none>@<none>"],"RepoTags":["<none>:<none>"],"SharedSize":-1,"Size":311117600,"VirtualSize":311117600},{"Containers":-1,"Created":1533910518,"Id":"sha256:83355e6614954015b22422ffffdcb6cd15a460b831218f969a896babdceb817c","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:00600f850020aedd5690578d413ade6fd46f7dba","config-editor:00600f850020aedd5690578d413ade6fd46f7dba"],"SharedSize":-1,"Size":311117601,"VirtualSize":311117601},{"Containers":-1,"Created":1533901279,"Id":"sha256:2dbdd472bf80bda8c11e1b6810679de2941fa8012b24539469b09b2a343ae04b","Labels":null,"ParentId":"sha256:4e2593c95bb2663065e23dac272dacd5d99e3312a41d1d6815ca13e4840f8f4d","RepoDigests":null,"RepoTags":["s3-json-processor:latest"],"SharedSize":-1,"Size":174663120,"VirtualSize":174663120},{"Containers":-1,"Created":1533826568,"Id":"sha256:c296791d1ac282e43b4102eb4ce2306cb68910df58ad53381d5da8c428af58ce","Labels":null,"ParentId":"sha256:827e3e6c1dd7d139c32efcfe5471efb9cddac44c23b1f6332bf0b9f883e07d77","RepoDigests":null,"RepoTags":["docker.intenthq.com/config-editor:5ceedec3cdf37e9a26d64e7ef8bd6e8dd9f9b6a7","config-editor:5ceedec3cdf37e9a26d64e7ef8bd6e8dd9f9b6a7"],"SharedSize":-1,"Size":311114985,"VirtualSize":311114985},{"Containers":-1,"Created":1533566333,"Id":"sha256:5fa65f3c4baddaf39e5d18de5832f25ccc2b8fcc9824818c578f521c0107724d","Labels":null,"ParentId":"sha256:5f3786552f9127e2a28e6443d7cd4100234a2f8f905e38eb4f6833714c36a317","RepoDigests":null,"RepoTags":["docker.intenthq.com/json-processor:53dfc90e3e7efcab5f1b79dffbe909677a7cb555","json-processor:53dfc90e3e7efcab5f1b79dffbe909677a7cb555","json-processor:latest"],"SharedSize":-1,"Size":130072508,"VirtualSize":130072508},{"Containers":-1,"Created":1533253329,"Id":"sha256:64037954aed2d1f24311d80d052cd08166e28181884b2a74afe4f3753b4fc5fb","Labels":null,"ParentId":"","RepoDigests":["python@sha256:bbb87624d2989186ebefc18d045fc47597ff67d697595e3f96d4a991faf2b563"],"RepoTags":["python:3.4-alpine"],"SharedSize":-1,"Size":67071444,"VirtualSize":67071444},{"Containers":-1,"Created":1533252136,"Id":"sha256:2e193287b426e53ce73f26997e244162e0de12b1d3e22e278a31628dfd151790","Labels":{"maintainer":"Minio
+        Inc <dev@minio.io>"},"ParentId":"","RepoDigests":["minio/minio@sha256:102f582ec338b531dde41a37bf110a73ecdca1241551f4c8d9304fabd9d937c8"],"RepoTags":["minio/minio:latest"],"SharedSize":-1,"Size":33389731,"VirtualSize":33389731},{"Containers":-1,"Created":1532643648,"Id":"sha256:735f80812f90aca43213934fd321a75ef20b2e30948dbbdd2c240e8abaab8a28","Labels":null,"ParentId":"","RepoDigests":["ubuntu@sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7"],"RepoTags":["ubuntu:latest"],"SharedSize":-1,"Size":83486393,"VirtualSize":83486393},{"Containers":-1,"Created":1531788806,"Id":"sha256:971bb384a50ae93856362f9c40ea471e66a97cfd4023b9cc9b8e4196e99da2c7","Labels":null,"ParentId":"","RepoDigests":["ubuntu@sha256:71529e96591eb36a4100cd0cc5353ff1a2f4ee7a85011e3d3dd07cb5eb524a3e"],"RepoTags":["ubuntu:trusty"],"SharedSize":-1,"Size":188037110,"VirtualSize":188037110},{"Containers":-1,"Created":1531269330,"Id":"sha256:ccfb0c83b2fedce997bb6e73e3f8d68a23bc15b0bc0b534c24ab2fe2239a80b5","Labels":null,"ParentId":"","RepoDigests":["openjdk@sha256:1bed44170948277881d88481ecbd07317eb7bae385560a9dd597bbfe02782766"],"RepoTags":["openjdk:8-jre-alpine"],"SharedSize":-1,"Size":82993515,"VirtualSize":82993515},{"Containers":-1,"Created":1531258784,"Id":"sha256:11569c00178041f0502a3251a2d33196c9a153c564814bc9f712c704a85200c2","Labels":{"org.label-schema.description":"A
+        modern reverse-proxy","org.label-schema.docker.schema-version":"1.0","org.label-schema.name":"Traefik","org.label-schema.url":"https://traefik.io","org.label-schema.vendor":"Containous","org.label-schema.version":"v1.6.5"},"ParentId":"","RepoDigests":["traefik@sha256:eabb39016917bd43e738fb8bada87be076d4553b5617037922b187c0a656f4a4"],"RepoTags":["traefik:latest"],"SharedSize":-1,"Size":52496718,"VirtualSize":52496718},{"Containers":-1,"Created":1530886466,"Id":"sha256:9d1f27787d395110df6fb5aa6ac2abac147e1313daa3c5d827b9edb3c29b9af6","Labels":null,"ParentId":"","RepoDigests":["alpine@sha256:8d9872bf7dc946db1b3cd2bf70752f59085ec3c5035ca1d820d30f1d1267d65d"],"RepoTags":["alpine:edge"],"SharedSize":-1,"Size":4413371,"VirtualSize":4413371},{"Containers":-1,"Created":1530886446,"Id":"sha256:11cd0b38bc3ceb958ffb2f9bd70be3fb317ce7d255c8a4c3f4af30e298aa1aab","Labels":null,"ParentId":"","RepoDigests":["alpine@sha256:7043076348bf5040220df6ad703798fd8593a0918d06d3ce30c6c93be117e430"],"RepoTags":["alpine:latest"],"SharedSize":-1,"Size":4413370,"VirtualSize":4413370},{"Containers":-1,"Created":1469200753,"Id":"sha256:9b9cb95443b5f846cd3c8cfa3f64e63b6ba68de2618a08875a119c81a8f96698","Labels":{},"ParentId":"","RepoDigests":["ubuntu@sha256:02521a2d079595241c6793b2044f02eecf294034f31d6e235ac4b2b54ffc41f3"],"RepoTags":["ubuntu:15.10","ubuntu:test_tag"],"SharedSize":-1,"Size":137205221,"VirtualSize":137205221}]
+
+'
     http_version: 
-  recorded_at: Tue, 22 Sep 2015 13:05:36 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Tue, 14 Aug 2018 13:06:13 GMT
+recorded_with: VCR 4.0.0

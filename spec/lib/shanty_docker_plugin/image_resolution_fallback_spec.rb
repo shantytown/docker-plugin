@@ -23,7 +23,7 @@ RSpec.describe(DockerPlugin::ImageResolutionFallback) do
 
     it('fails to resolve a non-existing tag and fallback tag', :vcr) do
       expect do
-        described_class.pull!(DockerPlugin::ImageWrapper.new(image_name, tag), tag)
+        described_class.pull!(DockerPlugin::ImageWrapper.new(image_name, "no"), "extrano")
       end.to(raise_error(DockerPlugin::Error::PullError))
     end
   end

@@ -36,8 +36,8 @@ module DockerPlugin
       logger.info("Pulling image #{@image_name}")
       Docker::Image.create(fromImage: @repo, tag: @tag)
       @underlying_image = lookup_image
-    rescue Docker::Error::ArgumentError
-      raise(Error::PullError, "Could not pull image #{@long_name}")
+    rescue Docker::Error::NotFoundError, Docker::Error::ArgumentError
+      raise(Error::PullError, "Failed to pull image #{@long_name}")
     end
 
     # Public: Add a tag to the image
@@ -99,7 +99,7 @@ module DockerPlugin
     def lookup_image
       images = Docker::Image.all
       images.each do |found_image|
-        return found_image if found_image.info['RepoTags'].include?(@long_name)
+        return found_image if (found_image.info['RepoTags'] || []).include?(@long_name)
       end
       nil
     end

@@ -4,7 +4,7 @@ require 'shanty_docker_plugin/git_tag'
 require 'spec_helper'
 
 RSpec.describe(DockerPlugin::DockerPlugin) do
-  include_context('plugin')
+  include_context('with plugin')
 
   it('adds the docker tag automatically') do
     expect(described_class.tags).to match_array([:docker])
